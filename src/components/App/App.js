@@ -5,6 +5,18 @@ import SearchResults from '../SearchResults/SearchResults';
 import TrackList from '../TrackList/TrackList';
 
 function App() {
+
+  const foundTracks = [
+    {name: "Sweet Child O' Mine", artist: "Guns N Roses"},
+    {name: "Basket Case", artist: "Green Day"},
+    {name: "Go Your Own Way", artist: "Fleetwood Mac"}
+  ]
+
+  const selectedTracks = [
+    {name: "Basket Case", artist: "Green Day"},
+    {name: "Sweet Child O' Mine", artist: "Guns N Roses"}
+  ]
+
   return (
     <>
       <div id="background"></div>
