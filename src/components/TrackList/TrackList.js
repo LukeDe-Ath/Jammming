@@ -1,37 +1,28 @@
 import React from 'react'
 import './TrackList.css'
+import Track from '../Track/Track'
 
-function TrackList() {
-
-    const resultArr = [
-      {name: "Sweet Child O' Mine", artist: "Guns N Roses"},
-      {name: "Basket Case", artist: "Green Day"},
-      {name: "Go Your Own Way", artist: "Fleetwood Mac"}
-    ]
+function TrackList(props) {
 
     return (
       <div className='TrackList'>
-          <form className="flex flex-col just-center">
-              <input type="text" name="playlistName" id="playlistName" placeholder='New Playlist Name' />
-              <div className="selectedSongs">
-                {
-                  resultArr.map((song, i) => {
-                    return (
-                      <div>
-                            <p key={`artist-${i}`} className="artist">{song.artist}</p>
-                            <p key={`name-${i}`} className='name'>{song.name}</p>
-                            {
-                                i !== resultArr.length-1 || i === 0 && resultArr.length !== 1 ? <hr /> : null
-                            }
-                        </div>
-                    )
-                  })
-                }
-              </div>
-              <button type="submit">Save To Spotify</button>
-          </form>
+      {
+        props.tracks.map((trackData, i) => {
+          return (
+            <Track
+              key={i}
+              trackData={trackData} 
+              isRemovable={props.isRemovable}
+              onAdd={props.onAdd}
+              onRemove={props.onRemove}
+            />
+          )
+        })
+      }
       </div>
     )
+
+
 }
 
 export default TrackList

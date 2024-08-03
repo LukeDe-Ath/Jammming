@@ -1,0 +1,21 @@
+.Track {
+    position: relative;
+}
+
+.trackAction {
+    position: absolute;
+    text-align: right;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.trackAction:hover {
+    color: var(--accent-col);
+}

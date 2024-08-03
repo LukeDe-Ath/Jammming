@@ -89,18 +89,18 @@ button[type="submit"]:active {
 }
 
 .SearchResults,
-.TrackList {
+.Playlist {
   padding: 20px 40px;
   background-color: rgba(0, 0, 0, 0.349);
   color: white;
   min-width: 30%;
 }
 
-.artist {
+.details {
+  color: var(--light-gray);
   margin: 0;
 }
 
 .name {
-  color: var(--light-gray);
   margin: 0;
 }
