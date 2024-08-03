@@ -1,0 +1,7 @@
+.SearchResults h2 {
+    padding: 12px 0;
+}
+
+hr {
+    border-color: var(--light-gray);
+}

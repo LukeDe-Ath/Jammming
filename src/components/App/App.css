@@ -1,0 +1,106 @@
+html {
+  --accent-col: rgba(231, 44, 231, 0.671);
+  --darker-col: rgb(78, 15, 78);
+  --light-gray: rgba(255, 255, 255, 0.5);
+  --backdrop: rgba(124, 19, 124, 0.6);
+  background-color: var(--backdrop);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.just-center {
+  justify-content: center;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+#background {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  min-height: 100vh;
+  position: fixed;
+  z-index: -1;
+  background: var(--backdrop) url('../../assets/backdrop.jpg');
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(8px) brightness(50%);
+  -webkit-filter: blur(8px) brightness(40%);
+}
+
+.App {
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+input[type="text"] {
+  padding: 15px 50px;
+  text-align: center;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+}
+
+input:focus {
+  outline: none;
+}
+
+button[type="submit"] {
+  text-transform: uppercase;
+  color: white;
+  background-color: var(--darker-col);
+  padding: 10px 30px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  transition: all .1s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--accent-col);
+}
+
+button[type="submit"]:active {
+  transform: scale(0.95);
+}
+
+.container {
+  gap: 40px;
+  align-items: top;
+  text-align: left;
+}
+
+.SearchResults,
+.TrackList {
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0.349);
+  color: white;
+  min-width: 30%;
+}
+
+.artist {
+  margin: 0;
+}
+
+.name {
+  color: var(--light-gray);
+  margin: 0;
+}

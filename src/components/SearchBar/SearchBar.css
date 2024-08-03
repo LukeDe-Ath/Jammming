@@ -1,0 +1,7 @@
+.SearchBar {
+    margin: 50px auto;
+}
+
+.SearchBar form {
+    gap: 40px;
+}

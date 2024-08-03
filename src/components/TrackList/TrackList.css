@@ -1,0 +1,16 @@
+.TrackList form {
+    gap: 40px;
+}
+
+.TrackList input {
+    border-bottom: 2px solid var(--light-gray);
+    background-color: transparent;
+    color: white;
+    text-align: left;
+    padding-left: 0;
+}
+
+.selectedSongs {
+    margin: 0;
+    display: block;
+}
