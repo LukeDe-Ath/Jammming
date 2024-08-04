@@ -11,9 +11,9 @@
 }
 
 .saved {
-    position: absolute;
+    position: fixed;
     right: -30%;
-    top: 20%;
+    top: 2%;
     align-self: center;
     background-color: rgba(50, 205, 50, 0.808);
     padding: 20px;
