@@ -3,8 +3,24 @@
     background-color: rgba(0, 0, 0, 0.7);
     padding: 30px 0;
     color: white;
+    position: relative;
 }
 
 .Header strong {
     color: var(--accent-col);
+}
+
+.saved {
+    position: absolute;
+    right: -30%;
+    top: 20%;
+    align-self: center;
+    background-color: rgba(50, 205, 50, 0.808);
+    padding: 20px;
+    border-radius: 3px;
+    transition: right .5s;
+}
+
+.show {
+    right: 5%;
 }

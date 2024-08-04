@@ -10,16 +10,9 @@ import Spotify from '../../util/Spotify'
 function App() {
 
   const [searchValue, setSearchValue] = useState('');
-  const [playlistName, setPlaylistName] = useState('');
+  const [playlistName, setPlaylistName] = useState('My New Playlist');
   const [selectedTracks, setSelectedTracks] = useState([])
   const [foundTracks, setFoundTracks] = useState([]);
-
-  // const foundTracks = [
-  //   {name: "Sweet Child O' Mine", artist: "Guns N Roses", album: "Some Album", uri: "spotify:track:5OmIuplwp4x5LT8HXPq6wP", id: 1},
-  //   {name: "Basket Case", artist: "Green Day", album: "Basket Case", uri: "spotify:track:6uLMxmK9MHb6fiecxn2yrp", id: 2},
-  //   {name: "Go Your Own Way", artist: "Fleetwood Mac", album: "Rumours", uri: "spotify:track:7809fpO7iB8XTGYGwbWiQB", id: 3}
-  // ]
-
 
   function handleSearchChange({ target }) {
     setSearchValue(target.value);
@@ -30,6 +23,7 @@ function App() {
   }
 
   function addTrack(newTrack) {
+    setSearchValue('');
     if (selectedTracks.some((currentTrack => currentTrack.id === newTrack.id))) {
       alert('This track has already been added!');
       return;
@@ -43,8 +37,28 @@ function App() {
   }
 
   function search(term) {
-    console.log(`Searching for ${term}`)
     Spotify.search(term).then(setFoundTracks);
+  }
+
+  function showSaveBanner() {
+    const banner = document.querySelector('.saved');
+    banner.classList.add('show')
+    setTimeout(() => {
+      banner.classList.remove('show');
+    }, 3000)
+  }
+
+  function handleSave() {
+    // Concatenate all uris to a single string
+    const uris = selectedTracks.map(track => track.uri)
+
+    Spotify.savePlaylist(uris, playlistName).then(() => {
+      setSelectedTracks([]);
+      setPlaylistName('My New Playlist');
+
+      // Saved banner
+      showSaveBanner();
+    })
   }
 
   return (
@@ -68,7 +82,7 @@ function App() {
             playlistName={playlistName}
             onNameChange={handleNameChange}
             onRemove={removeTrack}
-            // onSave={handleSave}
+            onSave={handleSave}
           />
         </div>
       </div>

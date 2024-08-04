@@ -9,7 +9,7 @@ function Playlist(props) {
 
             <TrackList tracks={props.selectedTracks} isRemovable={true} onRemove={props.onRemove} />
 
-            <button type="submit">Save To Spotify</button>
+            <button type="submit" onClick={() => props.onSave()}>Save To Spotify</button>
     </div>
   )
 }
