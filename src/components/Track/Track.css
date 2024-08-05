@@ -19,3 +19,15 @@
 .trackAction:hover {
     color: var(--accent-col);
 }
+
+.name {
+    position: relative;
+}
+
+.explicit {
+    color: var(--light-gray);
+    margin-left: 10px;
+    background-color: var(--dark-gray);
+    padding: 0px 5px;
+    cursor: default;
+}

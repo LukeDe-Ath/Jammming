@@ -38,7 +38,8 @@ const Spotify = {
                 name: item.name,
                 artist: item.artists[0].name,
                 album: item.album.name,
-                uri: item.uri
+                uri: item.uri,
+                explicit: item.explicit
             }))
         })
     },

@@ -27,9 +27,18 @@ function Track(props) {
         }
     }
 
+    const renderExplicit = () => {
+        if (props.trackData.explicit) {
+            return <span className="explicit">E</span>
+        }
+    }
+
     return (
         <div className='Track'>
-            <p className='name'>{props.trackData.name}</p>
+            <p className='name'>
+                {props.trackData.name}
+                {renderExplicit()}
+            </p>
             <p className="details">
                 {props.trackData.artist} | {props.trackData.album} 
             </p>

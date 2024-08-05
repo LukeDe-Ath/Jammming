@@ -2,6 +2,7 @@ html {
   --accent-col: rgba(231, 44, 231, 0.671);
   --darker-col: rgb(78, 15, 78);
   --light-gray: rgba(255, 255, 255, 0.5);
+  --dark-gray: rgba(134, 134, 134, 0.5);
   --backdrop: rgba(124, 19, 124, 0.6);
   background-color: var(--backdrop);
 }
